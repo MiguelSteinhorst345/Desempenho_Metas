@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudeAqui</title>
+
+    <link rel="shortcut icon" href="../img/logo_16x16.png" type="image/x-icon">
+    <script src="../scripts/tema.js"></script>
+    <link rel="stylesheet" href="../styles/desempenho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../scripts/ProtejePages.js"></script>
+</head>
+<body>
+
+    <div class="pagina">
+
+        <header class="cabecalho">
+            <div class="dentro-cabecalho">
+
+                <div class="acoes">
+
+                    <button id="alterartema" class="botao-icone" aria-label="Tema" type="button">
+                        <i data-lucide="moon" style="width:18px; height:18px; stroke-width:1.75;"></i>
+                    </button>
+
+                    <a href="./config.html" class="botao-icone botao-perfil" aria-label="Perfil" type="button" >
+                        <i  data-lucide="user" style="width:16px; height:16px; stroke-width:2;"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="corpo">
+
+            <aside class="barra-lateral">
+
+                <nav class="dentro-lateral">
+                    <a href="./home.html" class="opcao">
+                        <i data-lucide="layout-dashboard"></i>
+                        Inicio
+                    </a>
+
+                    <a href="./materias.html" class="opcao">
+                        <i data-lucide="book-marked"></i>
+                        Matérias
+                    </a>
+
+                    <a href="./cronograma.html" class="opcao">
+                        <i data-lucide="calendar-range"></i>
+                        Cronograma
+                    </a>
+
+                    <a href="./metas.html" class="opcao">
+                        <i data-lucide="goal"></i>
+                        Metas
+                    </a>
+
+                    <a href="./desempenho.html" class="opcao ativo">
+                        <i data-lucide="chart-spline"></i>
+                        Desempenho
+                    </a>
+
+                    <a href="./config.html" class="opcao">
+                        <i data-lucide="settings"></i>
+                        Configurações
+                    </a>
+                </nav>
+                
+            </aside>
+
+            <main class="conteudo">
+                <h1>Desempenho</h1>
+                <p class="conteudo-sub">
+                    Acompanhe seu progresso e evolução nos estudos.
+                </p>
+
+                <!-- Abas -->
+                
+
+                <!-- Cards de estatística -->
+                <div class="cards-inicio">
+                    <div class="card-stat">
+                        <div class="icone-badge badge-azul">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <span class="rotulo">Horas estudadas</span>
+                        <span class="valor" id="horas-estudadas">0h 00min</span>
+                        <span class="delta"> Esta semana</span>
+                    </div>
+
+                    <div class="card-stat">
+                        <div class="icone-badge badge-verde">
+                            <i data-lucide="circle-check"></i>  
+                        </div>
+                        <span class="rotulo">Taxa de Acertos Geral</span>
+                        <span class="valor" id="taxa-acertos">0%</span>
+                        <span class="delta"> Este mês</span>
+                    </div>
+
+                    <div class="card-stat">
+                        <div class="icone-badge badge-laranja">
+                            <i data-lucide="circle-x"></i>  
+                        </div>
+                        <span class="rotulo">Taxa de Erros Geral</span>
+                        <span class="valor" id="taxa-erros">0%</span>
+                        <span class="delta">Este mês</span>
+                    </div>
+
+                
+                </div>
+
+                <!-- Gráfico de barras + status -->
+                <div class="cards-meio">
+                    <div class="card-dias">
+                        <div class="card-titulo-linha">
+                            <span>Horas estudadas por dia</span>
+                            <div class="seletor-periodo">
+                                Esta semana
+                            </div>
+                        </div>
+
+                        <div class="grafico-barras"><div class="eixo-y"><span>4h</span><span>3h</span><span>2h</span><span>1h</span><span>0h</span></div></div>
+
+                        <div class="dias-semana">
+                            <span>seg</span>
+                            <span>ter</span>
+                            <span>qua</span>
+                            <span>qui</span>
+                            <span>sex</span>
+                            <span>sáb</span>
+                            <span>dom</span>
+                        </div>
+                    </div>
+
+                   
+                </div>
+
+                <!-- Desempenho por matéria -->
+                <div class="cards-final">
+                    <div class="card-desempenho">
+                        <span>Desempenho por matéria</span>
+
+                        <table class="tabela-materias" id="tabela-desempenho">
+                            <thead>
+                                <tr>
+                                    <th>Matéria</th>
+                                    <th class="col-progresso">Progresso</th>
+                                    <th>Atividades</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody><tr><td colspan="3" style="text-align:center;color:#9ca3af;padding:24px;">Carregando desempenho...</td></tr></tbody>
+                        </table>
+
+                        
+                        
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+    <p id="erro-desempenho" style="color:#ef4444;text-align:center;"></p>
+    <script src="../scripts/desempenho.js"></script>
+</body>
+</html>

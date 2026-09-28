@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudeAqui - Configurações</title>
+
+    <link rel="shortcut icon" href="../img/logo_16x16.png" type="image/x-icon">
+    <script src="../scripts/tema.js"></script>
+    <link rel="stylesheet" href="../styles/config.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../scripts/ProtejePages.js"></script>
+    <script src="../scripts/userDelete.js"></script>
+    <script src="../scripts/Logoff.js"></script>
+
+</head>
+<body>
+
+    <div class="pagina">
+
+        <header class="cabecalho">
+            <div class="dentro-cabecalho">
+
+                <div class="acoes">
+
+                    <button id="alterartema" class="botao-icone" aria-label="Tema" type="button">
+                        <i data-lucide="moon" style="width:18px; height:18px; stroke-width:1.75;"></i>
+                    </button>
+
+                    <button class="botao-icone botao-perfil" aria-label="Perfil" type="button">
+                        <i data-lucide="user" style="width:16px; height:16px; stroke-width:2;"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="corpo">
+
+<aside class="barra-lateral">
+
+    <nav class="dentro-lateral">
+        <a href="./home.html" class="opcao">
+            <i data-lucide="layout-dashboard"></i>
+            Inicio
+        </a>
+
+        <a href="./materias.html" class="opcao">
+            <i data-lucide="book-marked"></i>
+            Matérias
+        </a>
+
+        <a href="./cronograma.html" class="opcao">
+            <i data-lucide="calendar-range"></i>
+            Cronograma
+        </a>
+
+        <a href="./metas.html" class="opcao">
+            <i data-lucide="goal"></i>
+            Metas
+        </a>
+
+        <a href="./desempenho.html" class="opcao">
+            <i data-lucide="chart-spline"></i>
+            Desempenho
+        </a>
+
+        <a href="./config.html" class="opcao ativo">
+            <i data-lucide="settings"></i>
+            Configurações
+        </a>
+    </nav>
+    
+</aside>
+
+            <main class="conteudo">
+
+                <div class="cabecalho-pagina">
+                    <h1>Configurações</h1>
+                    <p>Gerencie seu perfil, segurança e preferências.</p>
+                </div>
+
+                <div class="config-grid">
+
+                    <section class="config-card" id="perfil" aria-labelledby="perfil-titulo">
+                        <form class="formulario-config" id="form-perfil">
+                            <div class="config-card-topo">
+                                <div class="config-card-titulo">
+                                    <i data-lucide="user-round"></i>
+                                    <div>
+                                        <h2 id="perfil-titulo">Perfil</h2>
+                                        <p>Suas informações pessoais e seus objetivos de estudo</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card-corpo">
+                                <div class="perfil-avatar">
+                                    <div class="avatar2"></div>
+                                    <div>
+                                        <input type="file" id="avatar-input" accept="image/*" hidden>
+                                        <button class="botao-secundario botao-selecionar-foto" type="button">
+                                            <i data-lucide="camera"></i>
+                                            Alterar foto
+                                        </button>
+                                        <p class="texto-ajuda">PNG ou JPG. Tamanho máximo de 2MB.</p>
+                                    </div>
+                                </div>
+
+                                <div class="campos-grid">
+                                    <div class="campo">
+                                        <label for="nome">Nome completo</label>
+                                        <input class="nome-config" type="text" id="nome" name="nome" value="">
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="email">E-mail</label>
+                                        <input type="email" id="email" name="email" value="">
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="objetivo">Objetivo de estudo</label>
+                                        <select id="objetivo" name="objetivo">
+                                            <option>Estudos</option>
+                                            <option>ENEM</option>
+                                            <option>Vestibular</option>
+                                            <option>Concurso público</option>
+                                            <option>OAB</option>
+                                            <option>Reforço escolar</option>
+                                            <option>Outro</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="meta-diaria">Meta diária de estudo</label>
+                                        <select id="meta-diaria" name="meta-diaria">
+                                            <option>1 hora</option>
+                                            <option>2 horas</option>
+                                            <option selected>3 horas</option>
+                                            <option>4 horas</option>
+                                            <option>6 horas ou mais</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card-rodape">
+                                <button type="submit" class="botao-primario botao-salvar">Salvar alterações</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="config-card" id="seguranca" aria-labelledby="seguranca-titulo">
+                        <form class="formulario-config" id="form-senha">
+                            <div class="config-card-topo">
+                                <div class="config-card-titulo">
+                                    <i data-lucide="shield-check"></i>
+                                    <div>
+                                        <h2 id="seguranca-titulo">Conta e segurança</h2>
+                                        <p>Atualize sua senha e gerencie o acesso à sua conta</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card-corpo">
+                                <div class="campos-grid">
+                                    <div class="campo campo-largura-total">
+                                        <label for="senha-atual">Senha atual</label>
+                                        <div class="campo-senha">
+                                            <input type="password" id="senha-atual" name="senha-atual" placeholder="Digite sua senha atual">
+                                            <button type="button" class="alternar-senha" aria-label="Mostrar senha">
+                                                <i data-lucide="eye" class="icone-mostrar"></i>
+                                                <i data-lucide="eye-off" class="icone-ocultar"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="senha-nova">Nova senha</label>
+                                        <div class="campo-senha">
+                                            <input type="password" id="senha-nova" name="senha-nova" placeholder="Mínimo de 8 caracteres">
+                                            <button type="button" class="alternar-senha" aria-label="Mostrar senha">
+                                                <i data-lucide="eye" class="icone-mostrar"></i>
+                                                <i data-lucide="eye-off" class="icone-ocultar"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="campo">
+                                        <label for="senha-confirmar">Confirmar nova senha</label>
+                                        <div class="campo-senha">
+                                            <input type="password" id="senha-confirmar" name="senha-confirmar" placeholder="Repita a nova senha">
+                                            <button type="button" class="alternar-senha" aria-label="Mostrar senha">
+                                                <i data-lucide="eye" class="icone-mostrar"></i>
+                                                <i data-lucide="eye-off" class="icone-ocultar"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card-rodape">
+                                <button type="submit" class="botao-primario botao-salvar">Atualizar senha</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="config-card" id="preferencias" aria-labelledby="preferencias-titulo">
+                        <form class="formulario-config">
+                            <div class="config-card-topo">
+                                <div class="config-card-titulo">
+                                    <i data-lucide="sliders-horizontal"></i>
+                                    <div>
+                                        <h2 id="preferencias-titulo">Preferências</h2>
+                                        <p>Personalize a aparência e o comportamento da plataforma</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="config-card-corpo">
+                                <div class="linha-config linha-config-empilhavel">
+                                    <div class="linha-config-texto">
+                                        <strong>Tema</strong>
+                                        <span>Escolha como o EstudeAqui aparece para você.</span>
+                                    </div>
+                                    <div class="segmentado" role="group" aria-label="Tema">
+                                        <button type="button" class="segmento ativo" aria-pressed="true">
+                                            <i data-lucide="sun"></i> Claro
+                                        </button>
+                                        <button type="button" class="segmento" aria-pressed="false">
+                                            <i data-lucide="moon"></i> Escuro
+                                        </button>
+                                        <button type="button" class="segmento" aria-pressed="false">
+                                            <i data-lucide="monitor"></i> Sistema
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="linha-config linha-config-empilhavel">
+                                    <div class="linha-config-texto">
+                                        <strong>Início da semana</strong>
+                                        <span>Define o primeiro dia no seu cronograma e calendário.</span>
+                                    </div>
+                                    <div class="segmentado" role="group" aria-label="Início da semana">
+                                        <button type="button" class="segmento" aria-pressed="false">Domingo</button>
+                                        <button type="button" class="segmento ativo" aria-pressed="true">Segunda-feira</button>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="config-card-rodape">
+                                <button type="submit" class="botao-primario botao-salvar">Salvar preferências</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="config-card perigo" id="privacidade" aria-labelledby="privacidade-titulo">
+                        <div class="config-card-topo">
+                            <div class="config-card-titulo">
+                                <i data-lucide="shield-alert"></i>
+                                <div>
+                                    <h2 id="privacidade-titulo">Privacidade e dados</h2>
+                                    <p>Controle seus dados pessoais e o acesso à sua conta</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-card-corpo">
+                            <div class="linha-config">
+                                <div class="linha-config-texto">
+                                    <strong>Sair da conta</strong>
+                                    <span>Ao clicar neste botão, você sairá da sua conta.</span>
+                                </div>
+                                <button type="button" class="botao-perigo botao-sair-conta">
+                                    <i data-lucide="log-out"></i>
+                                    Sair da conta
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="config-card-corpo">
+                            <div class="linha-config">
+                                <div class="linha-config-texto">
+                                    <strong>Excluir conta</strong>
+                                    <span>Remove permanentemente sua conta e todo o seu histórico de estudos.</span>
+                                </div>
+                                <button type="button" class="botao-perigo botao-excluir-conta">
+                                    <i data-lucide="trash-2"></i>
+                                    Excluir conta
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </main>
+
+
+          
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/atualizarUsuario.js"></script>
+</body>
+</html>
